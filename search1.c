@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 int main() {
-    printf("search!  woo hoo!\n");
+    printf("Diddly Doo! Pikachu I Choose You!\n");
 }
