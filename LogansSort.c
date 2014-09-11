@@ -30,7 +30,7 @@ void anotherSorter(int x, int y) {
     printf("sorted to %d %d\n", x < y ? x : y, x < y ? y : x);
 }
 
-void KingSizedSorter(int a, int b, int c) {
+void kingSizedSorter(int a, int b, int c) {
     int BiggestNumber;
     int MiddleNumber;
     int SmallestNumber;
@@ -39,14 +39,14 @@ void KingSizedSorter(int a, int b, int c) {
         BiggestNumber = c;
         MiddleNumber = b;
         SmallestNumber = a;
-    printf("Sorted from c to b to a: %d , %d , %d\n", c, b, a);
+    printf("Sorted from a to b to c: %d , %d , %d\n", a, b, c);
     }
     
     if ((c < b) && (b < a)) {
         BiggestNumber = a;
         MiddleNumber = b;
         SmallestNumber = c;
-    printf("Sorted from a to b to c: %d , %d , %d\n", a, b, c);
+    printf("Sorted from c to b to a: %d , %d , %d\n", c, b, a);
     }
  
     if ((c < a) && (a < b)) {
@@ -63,16 +63,23 @@ void KingSizedSorter(int a, int b, int c) {
     printf("Sorted from a to c to b: %d , %d , %d\n", a, c, b);
     }
 
-    if ((b < c) && (a < c) && (b < a)) {
+    if ((b < a) && (a < c)) {
         BiggestNumber = c;
         MiddleNumber = a;
         SmallestNumber = b;
     printf("Sorted from b to a to c: %d , %d , %d\n", b, a, c);
+    }
+
+    if ((b < c) && (c < a)) {
+        BiggestNumber = a;
+        MiddleNumber = c;
+        SmallestNumber = b;
+    printf("Sorted from b to c to a: %d , %d , %d\n", b, c, a);
     }
 }
 
 int main() {
     sort(12);
     anotherSorter(238476,245);
-    KingSizedSorter(1,50,100);
+    kingSizedSorter(1,1,1);
 }
