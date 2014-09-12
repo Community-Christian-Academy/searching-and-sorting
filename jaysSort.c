@@ -3,7 +3,7 @@
 
 void bradensThreeNumberSorter(int a, int b, int c);
 // the code for this function is over in bradensSort.c
-
+ 
 int main(int argc, char** argv) {
     int unsortedArray[4];
 
