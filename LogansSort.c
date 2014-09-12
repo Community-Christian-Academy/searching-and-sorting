@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void sort(int x) {
     printf("sorted to:  %d\n", x);
@@ -31,55 +32,62 @@ void anotherSorter(int x, int y) {
 }
 
 void kingSizedSorter(int a, int b, int c) {
-    int BiggestNumber;
-    int MiddleNumber;
-    int SmallestNumber;
+    int biggestNumber;
+    int middleNumber;
+    int smallestNumber;
 
     if ((a < b) && (b < c)) {
-        BiggestNumber = c;
-        MiddleNumber = b;
-        SmallestNumber = a;
+        biggestNumber = c;
+        middleNumber = b;
+        smallestNumber = a;
     printf("Sorted from a to b to c: %d , %d , %d\n", a, b, c);
     }
     
     if ((c < b) && (b < a)) {
-        BiggestNumber = a;
-        MiddleNumber = b;
-        SmallestNumber = c;
+        biggestNumber = a;
+        middleNumber = b;
+        smallestNumber = c;
     printf("Sorted from c to b to a: %d , %d , %d\n", c, b, a);
     }
  
     if ((c < a) && (a < b)) {
-        BiggestNumber = b;
-        MiddleNumber = a;
-        SmallestNumber = c;
+        biggestNumber = b;
+        middleNumber = a;
+        smallestNumber = c;
     printf("Sorted from c to a to b: %d , %d , %d\n", c, a, b);
     }
 
     if ((a < c) && (c < b)) {
-        BiggestNumber = b;
-        MiddleNumber = c;
-        SmallestNumber = a;
+        biggestNumber = b;
+        middleNumber = c;
+        smallestNumber = a;
     printf("Sorted from a to c to b: %d , %d , %d\n", a, c, b);
     }
 
     if ((b < a) && (a < c)) {
-        BiggestNumber = c;
-        MiddleNumber = a;
-        SmallestNumber = b;
+        biggestNumber = c;
+        middleNumber = a;
+        smallestNumber = b;
     printf("Sorted from b to a to c: %d , %d , %d\n", b, a, c);
     }
 
     if ((b < c) && (c < a)) {
-        BiggestNumber = a;
-        MiddleNumber = c;
-        SmallestNumber = b;
+        biggestNumber = a;
+        middleNumber = c;
+        smallestNumber = b;
     printf("Sorted from b to c to a: %d , %d , %d\n", b, c, a);
     }
 }
 
-int main() {
-    sort(12);
-    anotherSorter(238476,245);
-    kingSizedSorter(1,1,1);
+int main(int argc, char** argv) {
+    int unsortedArray[4];
+    
+    int i;
+    for (i = 1; i < argc; i++) {
+        printf("argument %d is %s\n, i, argv[i]);
+        unsortedArray[i] = atoi(argv[i]);
+
+    }
+    kingSizedSorter(unsortedArray[1], unsortedArray[2], unsortedArray[3]);
+    return 0;
 }
