@@ -1,35 +1,5 @@
 #include <stdio.h>
-
-void sort(int x) {
-    printf("sorted to:  %d\n", x);
-}
-
-void sortTwoNumbers(int x, int y) {
-    if (x < y) {
-        printf("already in order as %d %d\n", x, y);
-    } else {
-        printf("numbers were out of order.  sorted to %d %d\n", y, x);
-    }
-}
-
-void otherSorter(int a, int b) {
-    int biggestNumber;
-    int smallestNumber;
-    
-    if (a < b) {
-        biggestNumber = b;
-        smallestNumber = a;
-    } else {
-        biggestNumber = a;
-        smallestNumber = b;
-    }
-    printf("sorted to %d %d\n", smallestNumber, biggestNumber);
-}
-
-void anotherSorter(int x, int y) {
-    printf("sorted to %d %d\n", x < y ? x : y, x < y ? y : x);
-}
-
+#include <stdlib.h>
 void biggerSorter(int a, int b, int c) {
     int Number;
     int biggerNumber;
@@ -75,15 +45,15 @@ void biggerSorter(int a, int b, int c) {
         Number = a;
         biggerNumber = b;
         biggestNumber = c;
-    } if ((a < b) && (b = c)) {
+    } if ((a < b) && (b == c)) {
         Number = a;
         biggerNumber = b;
         biggestNumber = c;
-    } if ((b < a) && (a = c)) {
+    } if ((b < a) && (a == c)) {
         Number = b;
         biggerNumber = a;
         biggestNumber = c;
-    } if ((c < a) && (a = b)) {
+    } if ((c < a) && (a == b)) {
         Number = c;
         biggerNumber = a;
         biggestNumber = b;
@@ -91,8 +61,13 @@ void biggerSorter(int a, int b, int c) {
     printf("totes quashed: %d %d %d\n", Number, biggerNumber, biggestNumber);
 }
 
-int main() {
-    sort(12);
-    anotherSorter(238476,245);
-    biggerSorter(2, 10, 2);
+int main(int argc, char** argv) {
+    int unsortedArray[4];
+    
+    for (int i = 1; i < argc; i++) {
+        unsortedArray[i] = atoi(argv[i]);
+    }
+    
+    biggerSorter(unsortedArray[1], unsortedArray[2], unsortedArray[3]);
+    return 0;
 }
