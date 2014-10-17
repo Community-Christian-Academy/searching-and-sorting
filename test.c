@@ -43,7 +43,7 @@ int test() {
 }
 
 
-int numbers() {
+/*int numbers() {
 	int i;
 	for (i = 1; i <= 100; i++) {
 	//	printf("%d\n",i);
@@ -61,7 +61,7 @@ int numbers() {
 		test (i);
 	}
 }	
-
+*/
 main() {
 	test();
 }
