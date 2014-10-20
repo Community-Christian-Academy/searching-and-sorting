@@ -11,19 +11,13 @@ int test() {
 		
 		x = i;	
 	
-		if (x - 60 > 0) {
+		if ((x - 60) > 0) {
 			x = x - 60;
 		}
 		
-		
-		
-		if (x - 30 > 0) {
+		if ((x - 30) > 0) {
 			x = x - 30;
-			}
-		
-			
-			
-			
+        }
 			
 		remainder = x % 10;
 		sum = x / 10;
@@ -49,26 +43,6 @@ int test() {
 	}	
 }
 
-
-/*int numbers() {
-	int i;
-	for (i = 1; i <= 100; i++) {
-	//	printf("%d\n",i);
-		//if (i == 3) {
-			//printf ("Fizz\n");
-	
-		//} 
-		//if (i == 5) {
-			//printf ("Buzz\n");
-		//} 
-		//if (i != 3 && i != 5) {
-			//printf ("%d\n",i);
-		//}
-		
-		test (i);
-	}
-}	
-*/
 main() {
 	test();
 }
