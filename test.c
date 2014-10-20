@@ -23,21 +23,23 @@ int test() {
 		sum = x / 10;
 		sum = sum + remainder;
 	
-		if ((sum == 3 ) || (sum == 6) || (sum == 9)) {
+        int isDivisibleByThree = ((sum == 3 ) || (sum == 6) || (sum == 9));
+        int isDivisibleByFive = ((x % 10 == 5) || (x % 10 == 0));
+        
+		if (isDivisibleByThree) {
 			printf("Fizz\n");
 		}
 		
-		if ((x % 10 == 5) || (x % 10 == 0)) {
+		if (isDivisibleByFive) {
 			printf("Buzz\n");	
 			
 		}
 		
-		if (((sum == 3) || (sum == 6) || (sum == 9)) && ((x % 10 == 5) || (x % 10 == 0))) {
-			
+		if ((isDivisibleByThree) && (isDivisibleByFive)) {
 			printf("FizzBuzz\n");
 		}
 		
-		if ((sum != 3) && (sum != 6) && (sum != 9) && (x % 10 != 5) && (x % 10 != 0)) {
+		if ((isDivisibleByThree == 0) && (isDivisibleByFive == 0)) {
 			printf("%d\n",i);
 		}
 	}	
