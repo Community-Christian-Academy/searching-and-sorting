@@ -11,64 +11,40 @@ int test() {
 		
 		x = i;	
 	
-		if (x - 60 > 0) {
+		if ((x - 60) > 0) {
 			x = x - 60;
 		}
 		
-		
-		
-		if (x - 30 > 0) {
+		if ((x - 30) > 0) {
 			x = x - 30;
-			}
-		
-			
-			
-			
+        }
 			
 		remainder = x % 10;
 		sum = x / 10;
 		sum = sum + remainder;
 	
-		if ((sum == 3 ) || (sum == 6) || (sum == 9)) {
+        int isDivisibleByThree = ((sum == 3 ) || (sum == 6) || (sum == 9));
+        int isDivisibleByFive = ((x % 10 == 5) || (x % 10 == 0));
+        
+		if (isDivisibleByThree) {
 			printf("Fizz\n");
 		}
 		
-		if ((x % 10 == 5) || (x % 10 == 0)) {
+		if (isDivisibleByFive) {
 			printf("Buzz\n");	
 			
 		}
 		
-		if (((sum == 3) || (sum == 6) || (sum == 9)) && ((x % 10 == 5) || (x % 10 == 0))) {
-			
+		if ((isDivisibleByThree) && (isDivisibleByFive)) {
 			printf("FizzBuzz\n");
 		}
 		
-		if ((sum != 3) && (sum != 6) && (sum != 9) && (x % 10 != 5) && (x % 10 != 0)) {
+		if ((isDivisibleByThree == 0) && (isDivisibleByFive == 0)) {
 			printf("%d\n",i);
 		}
 	}	
 }
 
-
-/*int numbers() {
-	int i;
-	for (i = 1; i <= 100; i++) {
-	//	printf("%d\n",i);
-		//if (i == 3) {
-			//printf ("Fizz\n");
-	
-		//} 
-		//if (i == 5) {
-			//printf ("Buzz\n");
-		//} 
-		//if (i != 3 && i != 5) {
-			//printf ("%d\n",i);
-		//}
-		
-		test (i);
-	}
-}	
-*/
 main() {
 	test();
 }
